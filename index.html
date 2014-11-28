@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Introducción a Docker</title>
+    <title>Docker</title>
     <!-- Styles -->
     
     <link rel="stylesheet" media="print" href="temas/avalanche/avalanche/css/print.css">
@@ -64,10 +64,12 @@
         <div class="slide titleslide">
           <div class="inner">
             
-            <header><h1>Introducción a Docker</h1></header>
+            <header><h1>Docker</h1></header>
             
             
             <section><h2>APSL</h2>
+<p>bcabezas@apsl.net</p>
+<p><a href="http://talks.apsl.net/docker">http://talks.apsl.net/docker</a>  <a href="https://github.com/APSL/docker_talk">(or github)</a></p>
 </section>
             
           </div>
@@ -84,17 +86,779 @@
             </aside>
             
             <aside class="page_number">
-              1/2
+              1/22
             </aside>
           </footer>
           <div class="apsl">
-            Curso PostgreSQL · Oct 2014 · apsl.net
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
             <img class="logoapsl" src="img/apsl.png" />
           </div>
         </div>
       </div>
       
       <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Agenda</h1></header>
+            
+            
+            <section><ul>
+<li>Qué es?</li>
+<li>El problema</li>
+<li>la revolución de los containers</li>
+<li>Ventajas principales</li>
+<li>Arquitectura</li>
+<li>El ciclo de vida Docker</li>
+<li>El ecosistema</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿Qué es Docker?</h1></header>
+            
+            
+            <section><p><img src='img/container.jpg' /></p>
+<p>"Docker es un proyecto de software libre para crear fácilmente containers 
+ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>El problema</h1></header>
+            
+            
+            <section><p>Desplegar aplicaciones en los servidores es demasiado complicado</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>El problema</h1></header>
+            
+            
+            <section><p>Desplegar aplicaciones en los servidores es demasiado complicado</p>
+<p><img src='img/the-challenge.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>The Matrix From Hell</h1></header>
+            
+            
+            <section><p><img src='img/the-matrix-from-hell.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Transportes de mercancías antes de 1960</h1></header>
+            
+            
+            <section><p><img src='img/cargo-transport-pre-1960.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>También otra Matrix From Hell</h1></header>
+            
+            
+            <section><p><img src='img/also-a-matrix-from-hell.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Solución: El transporte intermodal</h1></header>
+            
+            
+            <section><p><img src='img/intermodal-shipping-container.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker es un sistema de contenedores para software</h1></header>
+            
+            
+            <section><p><img src='img/shipping-container-for-code.png' />aplicaciones</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Docker elimina la Matriz</h1></header>
+            
+            
+            <section><p><img src='img/eliminates-matrix-from-hell.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Containers: Caracteríasticas <em>disruptivas</em></h1></header>
+            
+            
+            <section><ul>
+<li><strong>Encapsulación</strong>: Aplicaciones y todas sus dependencias encapsuladas con una * interfaz estándar.  <em>Puerto TCP, start, stop, logs, límites...</em> <strong>Densidad</strong>:</li>
+<li>Ligereza significa Maximizacioń de recursos Hardware Más aplicaciones en el</li>
+<li>mismo Rack Hardware <strong>Inició rápido</strong>. Una VM sin el sobrecoste de una VM.</li>
+<li>Reinicio al estado inicial instantáneo.  <strong>Repetitividad</strong> y consistencia.</li>
+<li>Builds repetibles y automáticos.  Construye una vez. Despliega en local,</li>
+<li>test, QA, pre, prod, cloud, PaaS...  Lleva el trabajo colaborativo también a</li>
+<li>la parte Ops.  http://hub.docker.io Gestión de contenedores como código</li>
+<li>(commit / push / pull / diff) Aislamiento y seguridad</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Extremadamente ligeros: Densidad e Inicio rápido</h1></header>
+            
+            
+            <section><p><img src='img/containers-vs-vms.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Repetitividad y portabilidad</h1></header>
+            
+            
+            <section><ul>
+<li>Evita el problema de "<strong>En mi máquina funciona</strong>"</li>
+</ul>
+<p><img src='img/works-on-my-machine.jpg' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Arquitectura Docker</h1></header>
+            
+            
+            <section><p><img src='img/docker_nested_arch.png' /></p>
+<p>Necesitamos: kernel &gt;= 3.8</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Arquitectura Docker</h1></header>
+            
+            
+            <section><p><img src='img/docker_3d_arch.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Aplicaciones Dockerizadas: Ciclo de vida</h1></header>
+            
+            
+            <section><p><img src='img/basics-of-docker-system.png' /></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Aplicaciones Dockerizadas</h1></header>
+            
+            
+            <section><ul>
+<li>
+<p>Proceso creación Imágenes</p>
+<ul>
+<li>Manual (run, apt-get [...], commit, push)</li>
+<li>Automático: Dockerfiles</li>
+</ul>
+</li>
+<li>
+<p>Estilo Containers:</p>
+<ul>
+<li>Un sólo proceso</li>
+<li>Múltiples procesos encapsulados en un container<ul>
+<li>Gestor procesos: supervisor, circusd, runit, systemd</li>
+<li>Ej: <code>varnish | nginx | tomcat7</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Docker CLI Básico</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nv">$ </span>sudo docker
+</pre></div>
+
+<ul>
+<li><strong>ps</strong>: Lista contenedores</li>
+<li><strong>images</strong>: Lista imágenes</li>
+<li><strong>run</strong>: Crea un container de una imagen</li>
+<li><strong>start/stop</strong>: Para un container</li>
+<li><strong>build</strong>: Crea una imagen de una Dockerfile</li>
+<li><strong>inspect</strong>: Inspecciona una imagen</li>
+<li><strong>logs</strong>: Ver logs (stdout/stderr) de un container</li>
+<li><strong>push/pull</strong> push / pull imágenes del repositorio</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/80-get-started.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Próximos pasos</h1></header>
+            
+            
+            <section><ul>
+<li>Docker interactive tutorial</li>
+<li>https://www.docker.com/tryit/</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/80-get-started.md">slides/80-get-started.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/99-fin.md -->
+      <div class="slide-wrapper">
+        <div class="slide titleslide">
+          <div class="inner">
+            
+            <header><h1>Gracias</h1></header>
+            
+            
+            <section><p>bcabezas@apsl.net</p>
+<p><a href="http://talks.apsl.net/docker">http://talks.apsl.net/docker</a>  <a href="https://github.com/APSL/docker_talk">(or github)</a></p>
+<p><a href="https://github.com/adamzap/landslide">Presentación hecha con landslide</a></p>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/99-fin.md">slides/99-fin.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/22
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/99-fin.md -->
       <div class="slide-wrapper">
         <div class="slide">
           <div class="inner">
@@ -124,15 +888,16 @@
           <footer>
             
             <aside class="source">
-              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+              Source: <a href="slides/99-fin.md">slides/99-fin.md</a>
             </aside>
             
             <aside class="page_number">
-              2/2
+              22/22
             </aside>
           </footer>
           <div class="apsl">
-            Curso PostgreSQL · Oct 2014 · apsl.net
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
             <img class="logoapsl" src="img/apsl.png" />
           </div>
         </div>
@@ -148,7 +913,7 @@
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Introducción a Docker</a></th>
+        <th><a href="#slide1">Docker</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
@@ -156,6 +921,126 @@
       <tr id="toc-row-2">
         <th><a href="#slide2">Agenda</a></th>
         <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">¿Qué es Docker?</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">El problema</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">El problema</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">The Matrix From Hell</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Transportes de mercancías antes de 1960</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">También otra Matrix From Hell</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">Solución: El transporte intermodal</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Docker es un sistema de contenedores para software</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Docker elimina la Matriz</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Containers: Caracteríasticas <em>disruptivas</em></a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Extremadamente ligeros: Densidad e Inicio rápido</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Repetitividad y portabilidad</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Arquitectura Docker</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Arquitectura Docker</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Aplicaciones Dockerizadas: Ciclo de vida</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Aplicaciones Dockerizadas</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Docker CLI Básico</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Próximos pasos</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">Gracias</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Agenda</a></th>
+        <td><a href="#slide22">22</a></td>
       </tr>
       
       
