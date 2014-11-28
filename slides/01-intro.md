@@ -134,6 +134,39 @@ Necesitamos: kernel >= 3.8
         * Gestor procesos: supervisor, circusd, runit, systemd
         * Ej: `varnish | nginx | tomcat7`
 
+--- 
+# Cómo empezar? 
+
+    !bash
+    curl http://get.docker.io | sudo sh
+    # básicamente configura repos y apt-get install lxc-docker 
+
+o
+
+    !bash
+    $ sudo sh -c "echo deb https://get.docker.com/ubuntu docker main\
+    > /etc/apt/sources.list.d/docker.list"
+    $ sudo apt-get update
+    $ sudo apt-get install lxc-docker
+    
+o
+
+    !bash
+    # Instala vagrant, y...
+    $ git clone https://github.com/dotcloud/docker.git
+    $ vagrant up
+    $ vagrant ssh
+    $ sudo docker
+
+---
+# ¿Cómo seguir? 
+
+* Docker interactive tutorial                                                             
+    * https://www.docker.com/tryit/ 
+* Crear una cuenta en docker hub:
+    * https://hub.docker.com/
+* Curiosear las imágenes APSL :)
+    * https://registry.hub.docker.com/repos/apsl/
 
 --- 
 # Docker CLI Básico
@@ -149,3 +182,119 @@ Necesitamos: kernel >= 3.8
 * **inspect**: Inspecciona una imagen
 * **logs**: Ver logs (stdout/stderr) de un container
 * **push/pull** push / pull imágenes del repositorio
+
+--- 
+
+# Docker pull
+
+    !bash
+    bercab@valle:~$ docker pull ubuntu
+    ubuntu:latest: The image you are pulling has been verified
+    5bc37dc2dfba: Downloading [====================================>              ] 146.5 MB/201.6 MB 31s
+    5bc37dc2dfba: Downloading [====================================>              ] 147.1 MB/201.6 MB 31s
+    5bc37dc2dfba: Downloading [====================================>              ] 147.6 MB/201.6 MB 30s
+    5bc37dc2dfba: Downloading [====================================>              ] 148.1 MB/201.6 MB 30s
+    5bc37dc2dfba: Downloading [=======================================>           ]   160 MB/201.6 MB 23s
+    5bc37dc2dfba: Pull complete 
+    61cb619d86bc: Pull complete 
+    3f45ca85fedc: Pull complete 
+    78e82ee876a2: Pull complete 
+    dc07507cef42: Pull complete 
+    86ce37374f40: Pull complete 
+    Status: Downloaded newer image for ubuntu:latest
+
+
+    bercab@valle:~$ docker run -it ubuntu  bash
+    root@388ebdac8559:/#   
+
+---
+# Docker run, commit, push
+
+    !bash
+    root@388ebdac8559:/# apt-get update
+    # se bajan muchas cosas 
+
+    root@388ebdac8559:/# apt-get install redis-server
+    # apt-get hace muchas cosas
+    root@388ebdac8559:/# exit
+
+    bercab@valle:~$ docker ps -a
+    CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                      PORTS               NAMES
+    388ebdac8559        ubuntu:latest       "bash"                 4 minutes ago       Exited (0) 24 seconds ago                       tender_sammet2 
+
+    bercab@valle:~$ docker diff 388ebdac8559
+    A /etc/bash_completion.d/redis-cli
+    C /etc/default
+    A /usr/bin/redis-cli
+    # todos los cambios en el fs del container aparecen en el diff
+
+    bercab@valle:~$ docker commit -m "Instalamos redis-server" 388ebdac8559 bercab/redis
+    39723f9604b2d26810a7b9527af4d737f38ed269cefc9b99f3ace21d49bb15dc
+
+    bercab@valle:~$ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    bercab/redis        latest              39723f9604b2        6 seconds ago       215.4 MB
+
+    bercab@valle:~$ docker push bercab/redis
+    # ...
+
+---
+# Docker run, commit, push
+
+    !bash
+    bercab@valle:~$ docker run --name miredis -d  bercab/redis /usr/bin/redis-server
+    3766d86c1363875da76399bde74d4ff8038fc1861d624d49999ae22315907880
+
+    bercab@valle:~$ docker ps
+    CONTAINER ID   IMAGE         COMMAND   STATUS        PORTS                   NAMES
+    3766d86c1363   bercab/redis  "/usr/bi  Up 7 seconds  0.0.0.0:6379->6379/tcp  miredis
+
+
+    bercab@valle:~$ docker logs miredis
+    [1] 28 Nov 01:55:10.599 # Warning: no config file specified, using the default config. In order to specify a config file use /usr/bin/redis-server /path/to/redis.conf
+                    _._                                                  
+            _.-``__ ''-._                                             
+        _.-``    `.  `_.  ''-._           Redis 2.8.4 (00000000/0) 64 bit
+    .-`` .-```.  ```\/    _.,_ ''-._                                   
+    (    '      ,       .-`  | `,    )     Running in stand alone mode
+    |`-._`-...-` __...-.``-._|'` _.-'|     Port: 6379
+    |    `-._   `._    /     _.-'    |     PID: 1
+    [1] 28 Nov 01:55:10.603 # Server started, Redis version 2.8.4
+    [1] 28 Nov 01:55:10.603 # WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add 'vm.overcommit_memory = 1' to /etc/sysctl.conf and then reboot or run the command 'sysctl vm.overcommit_memory=1' for this to take effect.
+    [1] 28 Nov 01:55:10.603 * The server is now ready to accept connections on port 6379
+
+
+    bercab@valle:~$ docker stop miredis
+    miredis
+    bercab@valle:~$ docker start miredis
+    miredis
+
+---
+# Bonus: docker exec
+
+    !bash
+    bercab@valle:~$ docker exec -it miredis bash
+    root@3766d86c1363:/# ps axu
+    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+    root         1  0.0  0.0  37000  5536 ?        Ssl  01:58   0:00 /usr/bin/redis-server *:6379
+    root        14  0.3  0.0  18140  1860 ?        S    02:00   0:00 bash
+    root        28  0.0  0.0  15568  1128 ?        R+   02:00   0:00 ps axu
+
+
+* Docker *exec* rompe la filosofía inicial de docker: No hace falta entrar en los
+containers. Sin embargo, en casos puntuales se reclamaba la necesidad.
+    * Ejecutar sshd. [(Why you don't need to run sshd in your docker containers)](http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/)
+    * Salió nsenter, precedesor de docker exec
+
+
+---
+# Pero... un momento
+
+## ¿Esto no era automático y repetible? 
+
+.fx: titleslide
+
+
+---
+# Dockerfiles:  Dockerizando Apps
+

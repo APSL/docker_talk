@@ -86,7 +86,7 @@
             </aside>
             
             <aside class="page_number">
-              1/22
+              1/28
             </aside>
           </footer>
           <div class="apsl">
@@ -129,7 +129,7 @@
             </aside>
             
             <aside class="page_number">
-              2/22
+              2/28
             </aside>
           </footer>
           <div class="apsl">
@@ -166,7 +166,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              3/22
+              3/28
             </aside>
           </footer>
           <div class="apsl">
@@ -201,7 +201,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              4/22
+              4/28
             </aside>
           </footer>
           <div class="apsl">
@@ -237,7 +237,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              5/22
+              5/28
             </aside>
           </footer>
           <div class="apsl">
@@ -272,7 +272,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              6/22
+              6/28
             </aside>
           </footer>
           <div class="apsl">
@@ -307,7 +307,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              7/22
+              7/28
             </aside>
           </footer>
           <div class="apsl">
@@ -342,7 +342,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              8/22
+              8/28
             </aside>
           </footer>
           <div class="apsl">
@@ -377,7 +377,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              9/22
+              9/28
             </aside>
           </footer>
           <div class="apsl">
@@ -412,7 +412,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              10/22
+              10/28
             </aside>
           </footer>
           <div class="apsl">
@@ -447,7 +447,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              11/22
+              11/28
             </aside>
           </footer>
           <div class="apsl">
@@ -491,7 +491,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              12/22
+              12/28
             </aside>
           </footer>
           <div class="apsl">
@@ -526,7 +526,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              13/22
+              13/28
             </aside>
           </footer>
           <div class="apsl">
@@ -564,7 +564,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              14/22
+              14/28
             </aside>
           </footer>
           <div class="apsl">
@@ -600,7 +600,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              15/22
+              15/28
             </aside>
           </footer>
           <div class="apsl">
@@ -635,7 +635,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              16/22
+              16/28
             </aside>
           </footer>
           <div class="apsl">
@@ -670,7 +670,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              17/22
+              17/28
             </aside>
           </footer>
           <div class="apsl">
@@ -724,7 +724,108 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              18/22
+              18/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Cómo empezar?</h1></header>
+            
+            
+            <section><div class="highlight"><pre>curl http://get.docker.io | sudo sh
+<span class="c"># básicamente configura repos y apt-get install lxc-docker</span>
+</pre></div>
+
+<p>o</p>
+<div class="highlight"><pre><span class="nv">$ </span>sudo sh -c <span class="s2">&quot;echo deb https://get.docker.com/ubuntu docker main\</span>
+<span class="s2">&gt; /etc/apt/sources.list.d/docker.list&quot;</span>
+<span class="nv">$ </span>sudo apt-get update
+<span class="nv">$ </span>sudo apt-get install lxc-docker
+</pre></div>
+
+<p>o</p>
+<div class="highlight"><pre><span class="c"># Instala vagrant, y...</span>
+<span class="nv">$ </span>git clone https://github.com/dotcloud/docker.git
+<span class="nv">$ </span>vagrant up
+<span class="nv">$ </span>vagrant ssh
+<span class="nv">$ </span>sudo docker
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>¿Cómo seguir?</h1></header>
+            
+            
+            <section><ul>
+<li>Docker interactive tutorial                                                             <ul>
+<li>https://www.docker.com/tryit/ </li>
+</ul>
+</li>
+<li>Crear una cuenta en docker hub:<ul>
+<li>https://hub.docker.com/</li>
+</ul>
+</li>
+<li>Curiosear las imágenes APSL :)<ul>
+<li>https://registry.hub.docker.com/repos/apsl/</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/28
             </aside>
           </footer>
           <div class="apsl">
@@ -771,7 +872,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              19/22
+              21/28
             </aside>
           </footer>
           <div class="apsl">
@@ -782,17 +883,207 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
         </div>
       </div>
       
-      <!-- slide source: slides/80-get-started.md -->
+      <!-- slide source: slides/01-intro.md -->
       <div class="slide-wrapper">
-        <div class="slide">
+        <div class="slide has_code">
           <div class="inner">
             
-            <header><h1>Próximos pasos</h1></header>
+            <header><h1>Docker pull</h1></header>
             
             
-            <section><ul>
-<li>Docker interactive tutorial</li>
-<li>https://www.docker.com/tryit/</li>
+            <section><div class="highlight"><pre>bercab@valle:~<span class="nv">$ </span>docker pull ubuntu
+ubuntu:latest: The image you are pulling has been verified
+5bc37dc2dfba: Downloading <span class="o">[====================================</span>&gt;              <span class="o">]</span> 146.5 MB/201.6 MB 31s
+5bc37dc2dfba: Downloading <span class="o">[====================================</span>&gt;              <span class="o">]</span> 147.1 MB/201.6 MB 31s
+5bc37dc2dfba: Downloading <span class="o">[====================================</span>&gt;              <span class="o">]</span> 147.6 MB/201.6 MB 30s
+5bc37dc2dfba: Downloading <span class="o">[====================================</span>&gt;              <span class="o">]</span> 148.1 MB/201.6 MB 30s
+5bc37dc2dfba: Downloading <span class="o">[=======================================</span>&gt;           <span class="o">]</span>   160 MB/201.6 MB 23s
+5bc37dc2dfba: Pull <span class="nb">complete </span>
+61cb619d86bc: Pull <span class="nb">complete </span>
+3f45ca85fedc: Pull <span class="nb">complete </span>
+78e82ee876a2: Pull <span class="nb">complete </span>
+dc07507cef42: Pull <span class="nb">complete </span>
+86ce37374f40: Pull <span class="nb">complete </span>
+Status: Downloaded newer image <span class="k">for </span>ubuntu:latest
+
+
+bercab@valle:~<span class="nv">$ </span>docker run -it ubuntu  bash
+root@388ebdac8559:/#
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Docker run, commit, push</h1></header>
+            
+            
+            <section><div class="highlight"><pre>root@388ebdac8559:/# apt-get update
+<span class="c"># se bajan muchas cosas</span>
+
+root@388ebdac8559:/# apt-get install redis-server
+<span class="c"># apt-get hace muchas cosas</span>
+root@388ebdac8559:/# <span class="nb">exit</span>
+
+bercab@valle:~<span class="nv">$ </span>docker ps -a
+CONTAINER ID        IMAGE               COMMAND                CREATED             STATUS                      PORTS               NAMES
+388ebdac8559        ubuntu:latest       <span class="s2">&quot;bash&quot;</span>                 4 minutes ago       Exited <span class="o">(</span>0<span class="o">)</span> 24 seconds ago                       tender_sammet2
+
+bercab@valle:~<span class="nv">$ </span>docker diff 388ebdac8559
+A /etc/bash_completion.d/redis-cli
+C /etc/default
+A /usr/bin/redis-cli
+<span class="c"># todos los cambios en el fs del container aparecen en el diff</span>
+
+bercab@valle:~<span class="nv">$ </span>docker commit -m <span class="s2">&quot;Instalamos redis-server&quot;</span> 388ebdac8559 bercab/redis
+39723f9604b2d26810a7b9527af4d737f38ed269cefc9b99f3ace21d49bb15dc
+
+bercab@valle:~<span class="nv">$ </span>docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+bercab/redis        latest              39723f9604b2        6 seconds ago       215.4 MB
+
+bercab@valle:~<span class="nv">$ </span>docker push bercab/redis
+<span class="c"># ...</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Docker run, commit, push</h1></header>
+            
+            
+            <section><div class="highlight"><pre>bercab@valle:~<span class="nv">$ </span>docker run --name miredis -d  bercab/redis /usr/bin/redis-server
+3766d86c1363875da76399bde74d4ff8038fc1861d624d49999ae22315907880
+
+bercab@valle:~<span class="nv">$ </span>docker ps
+CONTAINER ID   IMAGE         COMMAND   STATUS        PORTS                   NAMES
+3766d86c1363   bercab/redis  <span class="err">&quot;</span>/usr/bi  Up 7 seconds  0.0.0.0:6379-&gt;6379/tcp  miredis
+
+
+bercab@valle:~<span class="nv">$ </span>docker logs miredis
+<span class="o">[</span>1<span class="o">]</span> 28 Nov 01:55:10.599 <span class="c"># Warning: no config file specified, using the default config. In order to specify a config file use /usr/bin/redis-server /path/to/redis.conf</span>
+                _._                                                  
+        _.-<span class="sb">``</span>__ <span class="s1">&#39;&#39;</span>-._                                             
+    _.-<span class="sb">``</span>    <span class="sb">`</span>.  <span class="sb">`</span>_.  <span class="s1">&#39;&#39;</span>-._           Redis 2.8.4 <span class="o">(</span>00000000/0<span class="o">)</span> 64 bit
+.-<span class="sb">``</span> .-<span class="sb">```</span>.  <span class="sb">```</span><span class="se">\/</span>    _.,_ <span class="s1">&#39;&#39;</span>-._                                   
+<span class="o">(</span>    <span class="s1">&#39;      ,       .-`  | `,    )     Running in stand alone mode</span>
+<span class="s1">|`-._`-...-` __...-.``-._|&#39;</span><span class="sb">`</span> _.-<span class="s1">&#39;|     Port: 6379</span>
+<span class="s1">|    `-._   `._    /     _.-&#39;</span>    |     PID: 1
+<span class="o">[</span>1<span class="o">]</span> 28 Nov 01:55:10.603 <span class="c"># Server started, Redis version 2.8.4</span>
+<span class="o">[</span>1<span class="o">]</span> 28 Nov 01:55:10.603 <span class="c"># WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#39;vm.overcommit_memory = 1&#39; to /etc/sysctl.conf and then reboot or run the command &#39;sysctl vm.overcommit_memory=1&#39; for this to take effect.</span>
+<span class="o">[</span>1<span class="o">]</span> 28 Nov 01:55:10.603 * The server is now ready to accept connections on port 6379
+
+
+bercab@valle:~<span class="nv">$ </span>docker stop miredis
+miredis
+bercab@valle:~<span class="nv">$ </span>docker start miredis
+miredis
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Bonus: docker exec</h1></header>
+            
+            
+            <section><div class="highlight"><pre>bercab@valle:~<span class="nv">$ </span>docker <span class="nb">exec</span> -it miredis bash
+root@3766d86c1363:/# ps axu
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  37000  5536 ?        Ssl  01:58   0:00 /usr/bin/redis-server *:6379
+root        14  0.3  0.0  18140  1860 ?        S    02:00   0:00 bash
+root        28  0.0  0.0  15568  1128 ?        R+   02:00   0:00 ps axu
+</pre></div>
+
+<ul>
+<li>Docker <em>exec</em> rompe la filosofía inicial de docker: No hace falta entrar en los
+containers. Sin embargo, en casos puntuales se reclamaba la necesidad.<ul>
+<li>Ejecutar sshd. <a href="http://blog.docker.com/2014/06/why-you-dont-need-to-run-sshd-in-docker/">(Why you don't need to run sshd in your docker containers)</a></li>
+<li>Salió nsenter, precedesor de docker exec</li>
+</ul>
+</li>
 </ul></section>
             
           </div>
@@ -805,11 +1096,80 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
           <footer>
             
             <aside class="source">
-              Source: <a href="slides/80-get-started.md">slides/80-get-started.md</a>
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
             </aside>
             
             <aside class="page_number">
-              20/22
+              25/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide titleslide">
+          <div class="inner">
+            
+            <header><h1>Pero... un momento</h1></header>
+            
+            
+            <section><h2>¿Esto no era automático y repetible?</h2>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/28
+            </aside>
+          </footer>
+          <div class="apsl">
+            <span>Docker · Nov 2014 · apsl.net</span>
+            <img class="logodocker" src="img/docker.png" />
+            <img class="logoapsl" src="img/apsl.png" />
+          </div>
+        </div>
+      </div>
+      
+      <!-- slide source: slides/01-intro.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Dockerfiles:  Dockerizando Apps</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides/01-intro.md">slides/01-intro.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/28
             </aside>
           </footer>
           <div class="apsl">
@@ -830,7 +1190,13 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             
             <section><p>bcabezas@apsl.net</p>
 <p><a href="http://talks.apsl.net/docker">http://talks.apsl.net/docker</a>  <a href="https://github.com/APSL/docker_talk">(or github)</a></p>
-<p><a href="https://github.com/adamzap/landslide">Presentación hecha con landslide</a></p>
+<ul>
+<li>Gracias a:<ul>
+<li><a href="https://github.com/adamzap/landslide">landslide</a> (software python presentaciones Markup -&gt; html5)</li>
+<li>docker.io, blog.docker.com, por sus diagramas ;)</li>
+</ul>
+</li>
+</ul>
 </section>
             
           </div>
@@ -847,52 +1213,7 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
             </aside>
             
             <aside class="page_number">
-              21/22
-            </aside>
-          </footer>
-          <div class="apsl">
-            <span>Docker · Nov 2014 · apsl.net</span>
-            <img class="logodocker" src="img/docker.png" />
-            <img class="logoapsl" src="img/apsl.png" />
-          </div>
-        </div>
-      </div>
-      
-      <!-- slide source: slides/99-fin.md -->
-      <div class="slide-wrapper">
-        <div class="slide">
-          <div class="inner">
-            
-            <header><h1>Agenda</h1></header>
-            
-            
-            <section><ul>
-<li>Introducción</li>
-<li>Historia</li>
-<li>Arquitectura</li>
-<li>Configuración<ul>
-<li>postgresql.conf</li>
-<li>pg_hba.conf</li>
-</ul>
-</li>
-<li>Instalación</li>
-</ul></section>
-            
-          </div>
-          <div class="presenter_notes">
-            <header><h1>Notes</h1></header>
-            <section>
-            
-            </section>
-          </div>
-          <footer>
-            
-            <aside class="source">
-              Source: <a href="slides/99-fin.md">slides/99-fin.md</a>
-            </aside>
-            
-            <aside class="page_number">
-              22/22
+              28/28
             </aside>
           </footer>
           <div class="apsl">
@@ -1021,26 +1342,62 @@ ligeros, portables y auto-suficientes de cualquier <strong>aplicación</strong>"
       
       
       <tr id="toc-row-19">
-        <th><a href="#slide19">Docker CLI Básico</a></th>
+        <th><a href="#slide19">Cómo empezar?</a></th>
         <td><a href="#slide19">19</a></td>
       </tr>
       
       
       <tr id="toc-row-20">
-        <th><a href="#slide20">Próximos pasos</a></th>
+        <th><a href="#slide20">¿Cómo seguir?</a></th>
         <td><a href="#slide20">20</a></td>
       </tr>
       
       
       <tr id="toc-row-21">
-        <th><a href="#slide21">Gracias</a></th>
+        <th><a href="#slide21">Docker CLI Básico</a></th>
         <td><a href="#slide21">21</a></td>
       </tr>
       
       
       <tr id="toc-row-22">
-        <th><a href="#slide22">Agenda</a></th>
+        <th><a href="#slide22">Docker pull</a></th>
         <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">Docker run, commit, push</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">Docker run, commit, push</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Bonus: docker exec</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">Pero... un momento</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">Dockerfiles:  Dockerizando Apps</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Gracias</a></th>
+        <td><a href="#slide28">28</a></td>
       </tr>
       
       
