@@ -29,6 +29,7 @@ bcabezas@apsl.net
 "Docker es un proyecto de software libre para crear fácilmente containers 
 ligeros, portables y auto-suficientes de cualquier **aplicación**"
 
+
 ---
 
 # El problema
@@ -122,17 +123,10 @@ Necesitamos: kernel >= 3.8
 <img src='img/basics-of-docker-system.png' />
 
 ---
-# Aplicaciones Dockerizadas
 
-* Proceso creación Imágenes
-    * Manual (run, apt-get [...], commit, push)
-    * Automático: Dockerfiles
+# Aplicaciones Dockerizadas: Ciclo de vida
 
-* Estilo Containers:
-    * Un sólo proceso
-    * Múltiples procesos encapsulados en un container
-        * Gestor procesos: supervisor, circusd, runit, systemd
-        * Ej: `varnish | nginx | tomcat7`
+<img src='img/docker_terms_03.png' />
 
 --- 
 # Cómo empezar? 
@@ -298,6 +292,22 @@ containers. Sin embargo, en casos puntuales se reclamaba la necesidad.
 ---
 # Dockerfiles ·  Dockerizando Apps
 
+    !bash
+    bercab@valle:~/workspace/docker_talk$ cat Dockerfile
+
+    FROM ubuntu
+    MAINTAINER Bernardo Cabezas bcabezas@apsl.net
+
+    RUN apt-get -qq update
+    RUN apt-get install -y python3 && apt-get update
+
+    ADD . /talk
+
+    EXPOSE 8080
+    WORKDIR /talk
+    CMD ["python3", "-m", "http.server", "8080"]
+
+
 
 
 ---
@@ -354,6 +364,25 @@ containers. Sin embargo, en casos puntuales se reclamaba la necesidad.
     UID   PID    PPID   C STIME   TTY TIME      CMD
     root  13622  8497   0 03:17   ?   00:00:00  python3 -m http.server 8080
 
+---
+# Aplicaciones Dockerizadas
+
+* Proceso creación Imágenes
+    * Manual (run, apt-get [...], commit, push)
+    * Automático: Dockerfiles
+
+* Estilo Containers:
+    * Un sólo proceso
+    * Múltiples procesos encapsulados en un container
+        * Gestor procesos: supervisor, circusd, runit, systemd
+        * Ej: `varnish | nginx | tomcat7`
+
+
+---
+# Docker Oficial Repos
+
+<img src='img/official_repos.png' />
+
 
 ---
 # Ecosistema Docker
@@ -388,4 +417,19 @@ containers. Sin embargo, en casos puntuales se reclamaba la necesidad.
     * CoreOS https://coreos.com/
     * https://quay.io/ (private hosting)
     * https://www.shippable.com/
+
+---
+# En resumen
+
+* Docker usa tecnologías existentes, pero las hace fáciles y les da un 
+nuevo uso
+* Mayor Densidad, menos sobrecarga, menos errores -> **Menor coste IT**
+* Proyecto joven, *producction ready* desde la 1.0 (vamos por la 1.3.2)
+* Con una evolución y perspectivas brutales
+    * Mucho soporte de la comunidad. Ecosistema creciente.
+    * Cada vez más soluciones Orquestación y Hosting. 
+* Cultura / Metodología DevOps
+* Integra a la perfección con **http://12factor.net/**
+* Implica esfuerzo inicial y prueebas de adaptación del equipo
+* Pero **es demasiado bueno como para no tenerlo en cuenta y probarlo**
 
