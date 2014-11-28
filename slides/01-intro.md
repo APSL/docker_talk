@@ -296,5 +296,96 @@ containers. Sin embargo, en casos puntuales se reclamaba la necesidad.
 
 
 ---
-# Dockerfiles:  Dockerizando Apps
+# Dockerfiles ·  Dockerizando Apps
+
+
+
+---
+# Dockerfiles · build
+
+    !bash
+    bercab@valle:~/workspace/docker_talk$ docker build -t dockertalk .
+    Sending build context to Docker daemon 4.335 MB
+    Sending build context to Docker daemon 
+    Step 0 : FROM ubuntu
+    ---> 86ce37374f40
+    Step 1 : MAINTAINER Bernardo Cabezas bcabezas@apsl.net
+    ---> Running in 6b5b0848c8b0
+    ---> 544ef4474408
+    Removing intermediate container 6b5b0848c8b0
+    Step 2 : RUN apt-get -qq update
+    ---> Running in 67a53263172e
+    Removing intermediate container 67a53263172e
+    Step 3 : RUN apt-get install -y python3 && apt-get update
+    ---> Running in 5f648c117b96
+    [...]
+    Step 7 : CMD python3 -m http.server 8080
+    ---> Running in 89dbb7db1302
+    ---> 00426629c1ec
+    Removing intermediate container 89dbb7db1302
+    Successfully built 00426629c1ec
+---
+# Dockerfiles · run
+
+    !bash
+    bercab@valle:~/workspace/docker_talk$ docker images
+    REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+    dockertalk          latest              00426629c1ec        2 minutes ago       238.2 MB
+
+    bercab@valle:~/workspace/docker_talk$ docker run -d --name talk -p 8080:8080 dockertalk
+    a47112189b70937c6c8d0ec6b1a006015cba5f5c076daf35eedf148a94006cc1
+
+    bercab@valle:~/workspace/docker_talk$ wget -O /dev/null -S http://localhost:8080/
+    --2014-11-28 03:20:09--  http://localhost:8080/
+    Resolviendo localhost (localhost)... 127.0.0.1
+    Conectando con localhost (localhost)[127.0.0.1]:8080... conectado.
+    Petición HTTP enviada, esperando respuesta... 
+    HTTP/1.0 200 OK
+    Server: SimpleHTTP/0.6 Python/3.4.0
+    Date: Fri, 28 Nov 2014 02:20:09 GMT
+    Content-type: text/html
+    Content-Length: 46315
+    Last-Modified: Fri, 28 Nov 2014 02:10:46 GMT
+    Longitud: 46315 (45K) [text/html]
+    Grabando a: “/dev/null”
+
+
+    bercab@valle:~/workspace/docker_talk$ docker top talk
+    UID   PID    PPID   C STIME   TTY TIME      CMD
+    root  13622  8497   0 03:17   ?   00:00:00  python3 -m http.server 8080
+
+
+---
+# Ecosistema Docker
+
+* Orquestación (todo Software Libre)
+    * **fig**
+    * **flocker**
+    * Google Kubernetes
+    * Mesos http://mesos.apache.org/
+    * openstack Heat
+    * http://panamax.io/
+    * shipyard
+    * dokku (Docker mini-herokku)
+    * deis
+    * flynn http://flynn.io/
+    * Chef (OpsWorks), Puppet, SaltStack
+    * RedHat OpenShift V3
+
+---
+# Ecosistema Docker
+
+* Container Hosting providers:
+    * tutum https://www.tutum.co/
+    * [new! Amazon EC2 Container Service (ECS)](http://aws.amazon.com/es/ecs/)
+    * [new! Google Container Engine](https://cloud.google.com/compute/docs/containers)
+    * Amazon Elastic Beanstalk
+    * https://orchardup.com/
+    * Red Hat Projectatomic http://www.projectatomic.io/
+    * RedHat OpenShift V3
+    * DigitalOcean (eocker CoreOS)
+* Otros
+    * CoreOS https://coreos.com/
+    * https://quay.io/ (private hosting)
+    * https://www.shippable.com/
 
